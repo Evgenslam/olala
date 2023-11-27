@@ -1,14 +1,26 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
+import psycopg2
+import os
+from dotenv import load_dotenv
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Connection with DB
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+load_dotenv()
+
+try:
+    conn = psycopg2.connect(
+        dbname=os.getenv('DB_NAME'),
+        user=os.getenv('USER'),
+        password=os.getenv('PASSWORD'),
+        host=os.getenv('HOST'),
+        port=os.getenv('PORT')
+    )
+    print('Successful connection')
+except psycopg2.OperationalError as e:
+    print(f"Unable to connect to the database: {e}")
+
+# Create a cursor object
+#os.getenv().cursor()
+# Parsing files
+
+# Sending commands
