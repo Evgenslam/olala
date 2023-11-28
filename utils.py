@@ -7,7 +7,7 @@ from starlette.datastructures import UploadFile
 FORMAT = '%Y-%m-%d %H:%M:%S'
 
 """
-A new function using pandas 
+Pandas function
 """
 def process_coordinates_csv(uploaded_file: UploadFile):
     data = uploaded_file.file.read().decode('utf-8')
