@@ -9,6 +9,9 @@ FORMAT = '%Y-%m-%d %H:%M:%S'
 """
 Pandas function
 """
+def pandas_park_func():
+    pass
+
 def process_coordinates_csv(uploaded_file: UploadFile):
     data = uploaded_file.file.read().decode('utf-8')
     csv_data = csv.DictReader(data.splitlines(), delimiter=';')
